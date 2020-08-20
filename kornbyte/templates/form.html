@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'header.html' %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hero__text">
+                <h2 style = 'color:azure'>Buscar canciones o artistas</h2>
+                <div class="container col-md-4" style = "margin-left: 20px;">
+                    <center><ul class="nav nav-tabs">
+                      <li style = "margin-left:40%; padding-right:20px;" class="active"><a data-toggle="tab" href="#home">Cancion</a></li>
+                      <li><a data-toggle="tab" href="#menu1">Artista</a></li>
+                  
+                    </ul></center>
+                  
+                    <div class="tab-content col-md-12">
+                      <div id="home" class="tab-pane fade in active">
+                        <h3 style = "color: white;">ingresa el nombre de una canción o palabras asociadas a ella</h3>
+                       <form action="/search/" method="get">
+                      <input type="text" name="query">
+                      <input type="submit" class='btn btn-success' value="busqeuda"></form>
+                      </div>
+                      <div id="menu1" class="tab-pane fade">
+                        <h3 style = "color: white;">ingresa el nombre de un artista a buscar o palabras relacionadas al artista</h3>
+                  <form action="/search_art/" method="get">
+                      <input type="text" name="query_art">
+                      <input type="submit" class='btn btn-success' value="busquda"></form>    </div>
+                  </div>
+                  </div>          
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

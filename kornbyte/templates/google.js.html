@@ -1,0 +1,28 @@
+{}
+<script type="text/javascript">
+google.charts.load('current', {'packages':['bar']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['artista', 'seguidores'],
+    {% for i in top_artists_details %}
+    ['{{i.detail_info.name}}',{{i.detail_info.followers.total}}],
+    {% endfor %}
+  ]);
+  var options = {
+    chart: {
+      title: 'popularidad y seguidores ',
+      subtitle: 'artistas en el top',
+    },
+    
+    bars: 'horizontal' // Required for Material Bar Charts.
+    
+  };
+  
+
+  var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+  chart.draw(data, google.charts.Bar.convertOptions(options));
+}
+</script>

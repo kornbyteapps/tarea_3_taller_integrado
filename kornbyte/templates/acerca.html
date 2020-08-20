@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+    {% include "header.html" %}
+<body>
+    <!-- Page Preloder -->
+  
+
+    <!-- Header Section Begin -->
+    <header class="header header--normal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="header__logo">
+                        <a href="localhost:8000/"><img src="{% static 'img/personal_logo.png' %}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-10">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li><a href="/">Home</a></li>                                 
+                                </li>
+                                <li><a href="{% url 'acerca' %}">acerca</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header__right__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Begin -->
+    
+    <!-- Breadcrumb End -->
+
+    <!-- Blog Section Begin -->
+        
+         
+        <div class="container col-md-10">
+            <h1>acerca del proyecto</h1>
+            <br>
+          <span>  Esta página web fué diseñada con el propósito de comprender y experimentar el funcionamiento del framework "Django", Dentro de la asignatura Taller integrado
+              en la carrera de Ing informática para la universidad de playa ancha chile.
+              particularmente esta aplicación nace a partir del gusto personal del programador por la música, y la idea de encontrar música nueva de forma fácil
+              El sitio está diseñado para buscar hints de canciones u artistas y mostrar resultados de la busqueda y también de los artistas relacionados a esta.
+              para esto se utilizó la api de spotify.</span>
+              <h2>programador: Sebastián olivares</h2>
+              <h2>contacto: sebastian.olivares.upla@gmail.com</h2>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins --> {% static '' %}
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'js/jquery.barfiller.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}js/jquery.slicknav.js"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}js/owl.carousel.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <!-- Music Plugin -->
+    <script src="{% static 'js/jquery.jplayer.min.js' %}"></script>
+    <script src="{% static 'js/jplayerInit.js' %}"></script>
+</body>
+
+</html>

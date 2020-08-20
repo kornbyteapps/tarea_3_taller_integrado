@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+{% include "header.html" %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+{% include "google.js.html" %}
+<body>
+    <!-- Page Preloder 
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>-->
+    {% include "nav_bar.html" %}
+    <!-- Header Section End -->
+    <!-- Hero Section Begin -->
+    <section class="hero spad set-bg" data-setbg="{% static 'img/personal_g.jpg' %}">
+        <div class="container">
+            {% include "form.html" %}
+        </div>
+        
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Event Section Begin -->
+     <section class="event spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Artistas destacados</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="event__slider owl-carousel">
+                    {% for i in top_artists_details %}
+                    <div class="col-lg-4">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg" data-setbg="{{i.detail_info.images.0.url}}">
+                                <div class="ta  g-date">
+                                    <span>{{i.top}}</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>{{i.artist}}</h4>
+                                <p><i class="fa fa-map-marker"></i>seguidores: {{i.detail_info.followers.total}}</p>
+                            </div>
+                        </div>
+                    </div>{% endfor %}
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- Event Section End --> 
+
+    <!-- About Section Begin -->
+    <section class="about spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="about__pic">
+                        <div id="barchart_material" style="width: 500px; height: 600px;"></div>                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="about__text">
+                        <div class="section-title" style = 'margin-top: -150px'>
+                            <h2 style='margin-left: 80px'>top tracks de la semana</h2>
+                        </div>
+                        <table border="1" class="table table-bordered table-hover table-condensed" style = 'font-size: small; margin-left: -50px'>
+                        <thead>
+                            <tr style="text-align: right;">
+                              <th></th>
+                              <center><th style ='align-left'>top</th></center>
+                              <center><th style ='text-align:center'>track</th></center>
+                              <center><th style ='text-align:center'>artist</th></center>
+                              <center><th style ='text-align:center'>reproducciones</th></center>
+                              <center><th style ='text-align:center'>open_url</th></center>
+                            </tr>
+                          </thead>
+                          
+                          <tbody>
+                            {% for i in top_artists_details %}
+                               <center><th><a href="{{i.detail_info.external_links.url}}"><img src="{{i.detail_info.images.2.url}}" alt="" border=1 height=70px width=70px style="display: block; margin-left: auto; margin-right: auto;"></img></th></a></center>
+                               <center><td>{{i.top}}</td></center>
+                               <center><td>{{i.track}}</td></center>
+                               <center><td>{{i.artist}}</td></center>
+                               <center><td>{{i.streams}}</td></center>
+                               <center><td><a href="{{i.open_url}}" target="_blank">
+                                    <img border="0" alt="abrir en spotify" src="https://www.kindpng.com/picc/m/108-1084838_spotify-connect-logo-hd-png-download.png" width="150px" height="50px"target="_blank"></td></center>
+                              </tr>
+                            {% endfor %}
+                            </tbody></table>
+                        <center><a href="{% url 'topweek' %}" class="btn btn-dark" style = 'margin-left:-250px'>ver todos</a></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Services Section Begin -->
+    
+    <!-- Services Section End -->
+
+    <!-- Track Section Begin -->
+    
+    <!-- Track Section End -->
+
+    <!-- Youtube Section Begin -->
+  
+    <!-- Youtube Section End -->
+
+    <!-- Countdown Section Begin -->
+    <
+    <!-- Countdown Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad set-bg" data-setbg="img/footer-bg.png">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer__address">
+                        <ul>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <p>Phone</p>
+                                <h6>1-677-124-44227</h6>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope"></i>
+                                <p>Email</p>
+                                <h6>DJ.Music@gmail.com</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+               
+               
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/jquery.nicescroll.min.js'%}"></script>
+    <script src="{% static 'js/jquery.barfiller.js'%}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js'%}"></script>
+    <script src="{% static 'js/jquery.slicknav.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+{% static '' %}
+    <!-- Music Plugin -->
+    <script src="{% static 'js/jquery.jplayer.min.js' %}"></script>
+    <script src="{% static 'js/jplayerInit.js' %}"></script>
+</body>
+
+</html>
